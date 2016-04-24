@@ -1,5 +1,5 @@
 # xsblog
-基于.net4.0开发的博客程序<br>
+基于.net 4.0开发的博客程序<br>
 ## 运行环境
 VS2010+ <br>
 Sql Server2005+<br>
