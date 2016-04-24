@@ -1,0 +1,57 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/XSBlog/PageTemplates/ManageTemplateBase.Master" AutoEventWireup="true" CodeBehind="ManageTemplate.master.cs" Inherits="XS.Blog.WebUI.XSBlog.PageTemplates.ManageTemplate1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="TitlePlaceHolder" runat="server">
+    <asp:ContentPlaceHolder runat="server" ID="ManageTitlePlaceHolder" />
+    <!--加载进度条-->
+    <script type="text/javascript">
+        //显示加载条
+        function showProcess() {
+            GetMsg();
+        }
+        var timerId = null;
+        function GetMsg() {
+            var msg = document.getElementById("divShowLoading");
+            var divWidth = msg.style.width;
+            var divHeight = msg.style.height;
+            msg.style.position = "absolute";
+            msg.style.top = "30%";
+            msg.style.left = "50%";
+            msg.style.margin = "-" + (divHeight / 2) + "px 0 0 -" + (divWidth / 2 + 150) + "px";
+            msg.style.top = window.screen.height / 3 - 120;
+            if (window.document.readyState != null && window.document.readyState != 'complete') {
+                msg.style.display = "block";
+            }
+            else {
+                msg.style.display = "none";
+                window.clearTimeout(timerId);
+                return;
+            }
+            timerId = window.setTimeout('GetMsg()', 1000);
+        }
+        document.write('<div id="divShowLoading" style="position:absolute; display:none; background:#ffffff; padding:10px; border:1px solid  #cccccc;">');
+        document.write('<asp:Image ID="Image1" runat="server" ImageUrl="/XSBlog/Skin/Manage/Images/Frame/loadingBar.gif" /></div>');
+        showProcess();
+    </script>
+    <style type="text/css">
+        body {
+            overflow-y: scroll;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <div class="crumb">
+        <ul class="crumb-ul">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="#">首页</a>
+            </li>
+            <li>
+                <a href="#">日志</a>
+            </li>
+            <li>列表</li>
+        </ul>
+    </div>
+    <div class="main">
+        <asp:ContentPlaceHolder runat="server" ID="ManageContentPlaceHolder" />
+    </div>
+</asp:Content>

@@ -1,0 +1,17 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/XSBlog/PageTemplates/PageTemplateBase.Master" AutoEventWireup="true" CodeBehind="BlogPageTemplate.master.cs" Inherits="XS.Blog.WebUI.XSBlog.PageTemplates.BlogPageTemplate" %>
+
+<%@ Register Src="~/XSBlog/Home/UserControls/BlogTop.ascx" TagName="BlogTop" TagPrefix="uc1" %>
+<%@ Register Src="~/XSBlog/Home/UserControls/BlogFooter.ascx" TagName="BlogFooter" TagPrefix="uc2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="TitlePlaceHolder" runat="server">
+    <link href="/XSBlog/Skin/Manage/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+    <asp:ContentPlaceHolder runat="server" ID="BlogTitlePlaceHolder" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder" runat="server">
+    <div class="content">
+        <uc1:BlogTop runat="server" ID="BlogTop" />
+        <div class="main">
+            <asp:ContentPlaceHolder runat="server" ID="BlogContentPlaceHolder" />
+            <uc2:BlogFooter runat="server" ID="BlogFooter" />
+        </div>
+    </div>
+</asp:Content>

@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AD457618-A04B-4979-A68E-6F52974C95E7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XS.Blog.WebUI</RootNamespace>
+    <AssemblyName>XS.Blog.WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNetPager">
+      <HintPath>X:\乌托邦\Net\Framework\XS.Framework\XS.Framework.Assemblys\AspNetPager\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Framework\XS.Framework\XS.Framework.Assemblys\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Index.aspx" />
+    <Content Include="XSBlog\About\About.aspx" />
+    <Content Include="XSBlog\Album\AlbumList.aspx" />
+    <Content Include="XSBlog\Album\PhotoList.aspx" />
+    <Content Include="XSBlog\Album\PhotoView.aspx" />
+    <Content Include="XSBlog\Archive\Archive.aspx" />
+    <Content Include="XSBlog\Category\CategoryList.aspx" />
+    <Content Include="XSBlog\Category\DailyList.aspx" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\anchor\anchor.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\attachment.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\attachment.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\attachment.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\bg.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\icons.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\image.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\progress.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\success.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\attachment\images\success.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\background\background.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\background\background.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\background\background.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\background\images\bg.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\background\images\success.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\chart.config.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\charts.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\charts.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\charts.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\images\charts0.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\images\charts1.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\images\charts2.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\images\charts3.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\images\charts4.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\charts\images\charts5.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\emotion.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\emotion.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\emotion.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\0.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\gmap\gmap.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\help\help.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\help\help.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\help\help.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\image.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\image.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\image.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\images\bg.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\images\icons.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\images\icons.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\images\image.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\images\progress.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\images\success.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\image\images\success.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\internal.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\link\link.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\map\map.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\map\show.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\music\music.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\music\music.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\music\music.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\preview\preview.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\size.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\spechars\spechars.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\spechars\spechars.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\table\dragicon.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\table\edittable.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\table\edittable.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\table\edittable.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\table\edittd.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\table\edittip.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\config.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\images\bg.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\images\pre0.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\images\pre1.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\images\pre2.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\images\pre3.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\images\pre4.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\template.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\template.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\template\template.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\bg.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\file-icons.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\icons.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\icons.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\image.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\progress.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\success.gif" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\images\success.png" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\video.css" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\video.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\video\video.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\webapp\webapp.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\wordimage\tangram.js" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="XSBlog\Components\UEditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="XSBlog\Components\UEditor\index.html" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\en.js" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\addimage.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\background.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\button.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\copy.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\deletedisable.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\deleteenable.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\listbackground.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\localimage.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\music.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\en\images\upload.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\zh-cn\images\copy.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\zh-cn\images\music.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\zh-cn\images\upload.png" />
+    <Content Include="XSBlog\Components\UEditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="XSBlog\Components\UEditor\net\Bin\Newtonsoft.Json.dll" />
+    <Content Include="XSBlog\Components\UEditor\net\Bin\Newtonsoft.Json.pdb" />
+    <Content Include="XSBlog\Components\UEditor\net\Bin\Newtonsoft.Json.xml" />
+    <Content Include="XSBlog\Components\UEditor\net\config.json" />
+    <Content Include="XSBlog\Components\UEditor\net\controller.ashx" />
+    <Content Include="XSBlog\Components\UEditor\net\net.sln" />
+    <Content Include="XSBlog\Components\UEditor\net\README" />
+    <Content Include="XSBlog\Components\UEditor\net\test.html" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140708\6354038041770925273364889.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140708\6354038083880133789150340.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140708\6354038089924179487115107.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140708\6354038091002441163346507.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140708\6354038091013441782845740.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140708\6354038091021542259588311.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140708\6354038091029242697330882.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140709\6354046944678858643988639.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140709\6354046993800768251046852.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140709\6354047050320200985047864.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140709\6354047063953980787235614.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140712\6354079665490409001390606.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140712\6354079669021910996247652.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140712\6354079669236523264282965.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140712\6354079694666977805994067.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140712\6354079699328144404294599.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140712\6354079877907358553411031.jpg" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136673162830554774546" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136673316539342869295" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136815363663975367473" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136815399766041323663" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136815584176588388694" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136815635279514128197" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136823708441263390555" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136823832848383271684" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136823881751186254525" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136823917053202210715" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136857318763675530757" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136857381367255471322" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136861497802693021160" />
+    <Content Include="XSBlog\Components\UEditor\net\upload\image\20140719\6354136864850594461097256" />
+    <Content Include="XSBlog\Components\UEditor\net\Web.config" />
+    <Content Include="XSBlog\Components\UEditor\net\XSBlog\upload\image\20140708\6354038037916604828305787.jpg" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\css\ueditor.css" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\css\ueditor.min.css" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\dialogbase.css" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\anchor.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\arrow.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\arrow_down.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\arrow_up.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\button-bg.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\charts.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\cursor_h.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\cursor_h.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\cursor_v.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\cursor_v.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\filescan.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\highlighted.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\icons-all.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\icons.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\icons.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\loaderror.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\loading.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\lock.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\pagebreak.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\scale.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\sortable.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\spacer.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\sparator_v.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\table-cell-align.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\upload.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\videologo.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\word.gif" />
+    <Content Include="XSBlog\Components\UEditor\themes\default\images\wordpaste.png" />
+    <Content Include="XSBlog\Components\UEditor\themes\iframe.css" />
+    <Content Include="XSBlog\Components\UEditor\third-party\codemirror\codemirror.css" />
+    <Content Include="XSBlog\Components\UEditor\third-party\codemirror\codemirror.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\highcharts.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\data.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\map.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\jquery-1.10.2.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\jquery-1.10.2.min.map" />
+    <Content Include="XSBlog\Components\UEditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="XSBlog\Components\UEditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\font\vjs.eot" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\font\vjs.svg" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\font\vjs.ttf" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\font\vjs.woff" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\video-js.css" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\video-js.min.css" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\video-js.swf" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\video.dev.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\video-js\video.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.css" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="XSBlog\Components\UEditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="XSBlog\Components\UEditor\ueditor.all.js" />
+    <Content Include="XSBlog\Components\UEditor\ueditor.all.min.js" />
+    <Content Include="XSBlog\Components\UEditor\ueditor.config.js" />
+    <Content Include="XSBlog\Components\UEditor\ueditor.parse.js" />
+    <Content Include="XSBlog\Components\UEditor\ueditor.parse.min.js" />
+    <Content Include="XSBlog\Daily\DailyList.aspx" />
+    <Content Include="XSBlog\Daily\DailyView.aspx" />
+    <Content Include="XSBlog\Home\Home.aspx" />
+    <Content Include="XSBlog\Home\Modules\DailyBox.ascx" />
+    <Content Include="XSBlog\Home\Modules\MusicBox.ascx" />
+    <Content Include="XSBlog\Home\Modules\ProfileBox.ascx" />
+    <Content Include="XSBlog\Home\Modules\SinaBox.ascx" />
+    <Content Include="XSBlog\Home\UserControls\BlogFooter.ascx" />
+    <Content Include="XSBlog\Home\UserControls\BlogTop.ascx" />
+    <Content Include="XSBlog\Js\banBackSpace.js" />
+    <Content Include="XSBlog\Js\jquery-1.9.1.min.js" />
+    <Content Include="XSBlog\Js\jquery.nav-list.js" />
+    <Content Include="XSBlog\Js\manage.globle.js" />
+    <Content Include="XSBlog\Js\Validator.js" />
+    <Content Include="XSBlog\Manage\Index.aspx" />
+    <Content Include="XSBlog\Manage\Left.aspx" />
+    <Content Include="XSBlog\Manage\Login.aspx" />
+    <Content Include="XSBlog\Manage\MAlbum\AlbumEdit.aspx" />
+    <Content Include="XSBlog\Manage\MAlbum\AlbumList.aspx" />
+    <Content Include="XSBlog\Manage\MAlbum\PhotoEdit.aspx" />
+    <Content Include="XSBlog\Manage\MAlbum\PhotoList.aspx" />
+    <Content Include="XSBlog\Manage\MCategory\CategoryEdit.aspx" />
+    <Content Include="XSBlog\Manage\MCategory\CategoryList.aspx" />
+    <Content Include="XSBlog\Manage\MDaily\DailyEdit.aspx" />
+    <Content Include="XSBlog\Manage\MDaily\DailyList.aspx" />
+    <Content Include="XSBlog\Manage\MHome\Home.aspx" />
+    <Content Include="XSBlog\Manage\MMood\MoodEdit.aspx" />
+    <Content Include="XSBlog\Manage\MMood\MoodList.aspx" />
+    <Content Include="XSBlog\Manage\MSetting\GeneralSetting.aspx" />
+    <Content Include="XSBlog\Manage\MSetting\ModuleEdit.aspx" />
+    <Content Include="XSBlog\Manage\MSetting\ModuleList.aspx" />
+    <Content Include="XSBlog\Mood\MoodList.aspx" />
+    <Content Include="XSBlog\Skin\Classic\font-awesome.min.css" />
+    <Content Include="XSBlog\Skin\Classic\images\album.png" />
+    <Content Include="XSBlog\Skin\Classic\images\background.jpg" />
+    <Content Include="XSBlog\Skin\Classic\images\banner.gif" />
+    <Content Include="XSBlog\Skin\Classic\images\box-banner.gif" />
+    <Content Include="XSBlog\Skin\Classic\images\footer.gif" />
+    <Content Include="XSBlog\Skin\Classic\images\footer.jpg" />
+    <Content Include="XSBlog\Skin\Classic\images\head.jpg" />
+    <Content Include="XSBlog\Skin\Classic\images\icon.png" />
+    <Content Include="XSBlog\Skin\Classic\images\mood-background.png" />
+    <Content Include="XSBlog\Skin\Classic\images\mood-body.png" />
+    <Content Include="XSBlog\Skin\Classic\images\mood-foot.png" />
+    <Content Include="XSBlog\Skin\Classic\images\mood-head.png" />
+    <Content Include="XSBlog\Skin\Classic\images\nav.jpg" />
+    <Content Include="XSBlog\Skin\Classic\images\space.jpg" />
+    <Content Include="XSBlog\Skin\Classic\Style.css" />
+    <Content Include="XSBlog\Skin\Default\images\banner.jpg" />
+    <Content Include="XSBlog\Skin\Default\Style.css" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\Common.js" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\font-awesome.min.css" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\images\album.png" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\images\backgroud1.jpg" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\images\backgroud2.jpg" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\images\backgroud3.jpg" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\images\banner.gif" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\images\mood1.jpg" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\images\mood2.jpg" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\images\mood3.jpg" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\Style.css" />
+    <Content Include="XSBlog\Skin\Manage\font-awesome.min.css" />
+    <Content Include="XSBlog\Skin\Manage\Frame.css" />
+    <Content Include="XSBlog\Skin\Manage\Images\Frame\loadingBar.gif" />
+    <Content Include="XSBlog\Skin\Manage\Images\Frame\logo.png" />
+    <Content Include="XSBlog\Skin\Manage\Images\Login\background.jpg" />
+    <Content Include="XSBlog\Skin\Manage\Images\logo.png" />
+    <Content Include="XSBlog\Skin\Manage\Style.css" />
+    <Content Include="XSBlog\Skin\Origin\images\banner.jpg" />
+    <Content Include="XSBlog\Skin\Origin\Style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\About\About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\About\About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Album\AlbumList.aspx.cs">
+      <DependentUpon>AlbumList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Album\AlbumList.aspx.designer.cs">
+      <DependentUpon>AlbumList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Album\PhotoList.aspx.cs">
+      <DependentUpon>PhotoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Album\PhotoList.aspx.designer.cs">
+      <DependentUpon>PhotoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Album\PhotoView.aspx.cs">
+      <DependentUpon>PhotoView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Album\PhotoView.aspx.designer.cs">
+      <DependentUpon>PhotoView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Archive\Archive.aspx.cs">
+      <DependentUpon>Archive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Archive\Archive.aspx.designer.cs">
+      <DependentUpon>Archive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Category\CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Category\CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Category\DailyList.aspx.cs">
+      <DependentUpon>DailyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Category\DailyList.aspx.designer.cs">
+      <DependentUpon>DailyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\Config.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\GetAlbumHandler.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\Handler.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\PathFormater.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\QiniuHandler\QiniuCrawlerHandler.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\QiniuHandler\QiniuUploadHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\SetPhotoHandler.cs" />
+    <Compile Include="XSBlog\Components\UEditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="XSBlog\Daily\DailyList.aspx.cs">
+      <DependentUpon>DailyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Daily\DailyList.aspx.designer.cs">
+      <DependentUpon>DailyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Daily\DailyView.aspx.cs">
+      <DependentUpon>DailyView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Daily\DailyView.aspx.designer.cs">
+      <DependentUpon>DailyView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Home\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Home\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Home\Modules\DailyBox.ascx.cs">
+      <DependentUpon>DailyBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Home\Modules\DailyBox.ascx.designer.cs">
+      <DependentUpon>DailyBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Home\Modules\MusicBox.ascx.cs">
+      <DependentUpon>MusicBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Home\Modules\MusicBox.ascx.designer.cs">
+      <DependentUpon>MusicBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Home\Modules\ProfileBox.ascx.cs">
+      <DependentUpon>ProfileBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Home\Modules\ProfileBox.ascx.designer.cs">
+      <DependentUpon>ProfileBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Home\Modules\SinaBox.ascx.cs">
+      <DependentUpon>SinaBox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Home\Modules\SinaBox.ascx.designer.cs">
+      <DependentUpon>SinaBox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Home\UserControls\BlogFooter.ascx.cs">
+      <DependentUpon>BlogFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Home\UserControls\BlogFooter.ascx.designer.cs">
+      <DependentUpon>BlogFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Home\UserControls\BlogTop.ascx.cs">
+      <DependentUpon>BlogTop.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Home\UserControls\BlogTop.ascx.designer.cs">
+      <DependentUpon>BlogTop.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\Left.aspx.cs">
+      <DependentUpon>Left.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\Left.aspx.designer.cs">
+      <DependentUpon>Left.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MAlbum\AlbumEdit.aspx.cs">
+      <DependentUpon>AlbumEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MAlbum\AlbumEdit.aspx.designer.cs">
+      <DependentUpon>AlbumEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MAlbum\AlbumList.aspx.cs">
+      <DependentUpon>AlbumList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MAlbum\AlbumList.aspx.designer.cs">
+      <DependentUpon>AlbumList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MAlbum\PhotoEdit.aspx.cs">
+      <DependentUpon>PhotoEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MAlbum\PhotoEdit.aspx.designer.cs">
+      <DependentUpon>PhotoEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MAlbum\PhotoList.aspx.cs">
+      <DependentUpon>PhotoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MAlbum\PhotoList.aspx.designer.cs">
+      <DependentUpon>PhotoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MCategory\CategoryEdit.aspx.cs">
+      <DependentUpon>CategoryEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MCategory\CategoryEdit.aspx.designer.cs">
+      <DependentUpon>CategoryEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MCategory\CategoryList.aspx.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MCategory\CategoryList.aspx.designer.cs">
+      <DependentUpon>CategoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MDaily\DailyEdit.aspx.cs">
+      <DependentUpon>DailyEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MDaily\DailyEdit.aspx.designer.cs">
+      <DependentUpon>DailyEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MDaily\DailyList.aspx.cs">
+      <DependentUpon>DailyList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MDaily\DailyList.aspx.designer.cs">
+      <DependentUpon>DailyList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MHome\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MHome\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MMood\MoodEdit.aspx.cs">
+      <DependentUpon>MoodEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MMood\MoodEdit.aspx.designer.cs">
+      <DependentUpon>MoodEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MMood\MoodList.aspx.cs">
+      <DependentUpon>MoodList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MMood\MoodList.aspx.designer.cs">
+      <DependentUpon>MoodList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MSetting\GeneralSetting.aspx.cs">
+      <DependentUpon>GeneralSetting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MSetting\GeneralSetting.aspx.designer.cs">
+      <DependentUpon>GeneralSetting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MSetting\ModuleEdit.aspx.cs">
+      <DependentUpon>ModuleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MSetting\ModuleEdit.aspx.designer.cs">
+      <DependentUpon>ModuleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MSetting\ModuleList.aspx.cs">
+      <DependentUpon>ModuleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Manage\MSetting\ModuleList.aspx.designer.cs">
+      <DependentUpon>ModuleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\Mood\MoodList.aspx.cs">
+      <DependentUpon>MoodList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\Mood\MoodList.aspx.designer.cs">
+      <DependentUpon>MoodList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\PageTemplates\BlogPageTemplate.master.cs">
+      <DependentUpon>BlogPageTemplate.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\PageTemplates\BlogPageTemplate.master.designer.cs">
+      <DependentUpon>BlogPageTemplate.master</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\PageTemplates\ManageTemplate.master.cs">
+      <DependentUpon>ManageTemplate.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\PageTemplates\ManageTemplate.master.designer.cs">
+      <DependentUpon>ManageTemplate.master</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\PageTemplates\ManageTemplateBase.Master.cs">
+      <DependentUpon>ManageTemplateBase.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\PageTemplates\ManageTemplateBase.Master.designer.cs">
+      <DependentUpon>ManageTemplateBase.Master</DependentUpon>
+    </Compile>
+    <Compile Include="XSBlog\PageTemplates\PageTemplateBase.Master.cs">
+      <DependentUpon>PageTemplateBase.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XSBlog\PageTemplates\PageTemplateBase.Master.designer.cs">
+      <DependentUpon>PageTemplateBase.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Component\Qiniu\Qiniu.4.0.csproj">
+      <Project>{ad4ea9d1-11c2-4bf6-8a06-72a966bc1b80}</Project>
+      <Name>Qiniu.4.0</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\XS.Framework.Utility\XS.Framework.Utility.csproj">
+      <Project>{f1e16d44-ab17-4c2a-a4bd-fdbb55c733fb}</Project>
+      <Name>XS.Framework.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog.Components\XS.Blog.Components.csproj">
+      <Project>{39ca0b59-f100-4fc7-8936-a30f60844d2a}</Project>
+      <Name>XS.Blog.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog.Config\XS.Blog.Config.csproj">
+      <Project>{c5555929-e5be-49c4-93a9-e2ff10c7fbc9}</Project>
+      <Name>XS.Blog.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog.Data\XS.Blog.Data.csproj">
+      <Project>{f0e0f63b-028c-48e2-a19a-a2657475c233}</Project>
+      <Name>XS.Blog.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog.Entity\XS.Blog.Entity.csproj">
+      <Project>{29872d95-9e7f-4ca0-80cc-0ce34708ed18}</Project>
+      <Name>XS.Blog.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog.Framework\XS.Blog.Framework.csproj">
+      <Project>{a36ae2cc-2153-4a69-beb8-496d5e337ab6}</Project>
+      <Name>XS.Blog.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog.SqlServer\XS.Blog.Data.SqlServer.csproj">
+      <Project>{6de1b24d-f684-452e-8e8b-e01d6a08eb47}</Project>
+      <Name>XS.Blog.Data.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog\XS.Blog.csproj">
+      <Project>{fbe19402-28d0-4f4e-b9f0-3d524ccdd109}</Project>
+      <Name>XS.Blog</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="XSBlog\Components\UMEditor\" />
+    <Folder Include="XSBlog\Components\XSPaging\" />
+    <Folder Include="XSBlog\Manage\MComment\" />
+    <Folder Include="XSBlog\Manage\MTag\" />
+    <Folder Include="XSBlog\Manage\MUser\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\XS.Blog.pubxml" />
+    <Content Include="XSBlog\PageTemplates\BlogPageTemplate.master" />
+    <Content Include="XSBlog\PageTemplates\ManageTemplate.master" />
+    <Content Include="XSBlog\PageTemplates\ManageTemplateBase.Master" />
+    <Content Include="XSBlog\PageTemplates\PageTemplateBase.Master" />
+    <Content Include="XSBlog\Skin\Classic\font\fontawesome-webfont.woff" />
+    <Content Include="XSBlog\Skin\Fantasy-Default\font\fontawesome-webfont.woff" />
+    <Content Include="XSBlog\Skin\Manage\font\fontawesome-webfont.woff" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

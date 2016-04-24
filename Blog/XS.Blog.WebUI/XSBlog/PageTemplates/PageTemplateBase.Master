@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PageTemplateBase.master.cs" Inherits="XS.Blog.WebUI.XSBlog.PageTemplates.PageTemplateBase" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>XS.Blog</title>
+    <!--Css-->
+    <link href="/XSBlog/Skin/Fantasy-Default/Style.css" type="text/css" rel="stylesheet" />
+    <!--Js-->
+    <script src="/XSBlog/Js/jquery-1.9.1.min.js"></script>
+    <script src="/XSBlog/Skin/Fantasy-Default/Common.js"></script>
+    <asp:ContentPlaceHolder ID="TitlePlaceHolder" runat="server" />
+</head>
+<body>
+    <form id="aspnetForm" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ManageTemplateBase.Master.cs" Inherits="XS.Blog.WebUI.XSBlog.PageTemplates.ManageTemplateBase" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>XS.Blog</title>
+    <!--Css-->
+    <link href="/XSBlog/Skin/Manage/Style.css" type="text/css" rel="stylesheet" />
+    <link href="/XSBlog/Skin/Manage/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <!--Js-->
+    <script src="/XSBlog/Js/jquery-1.9.1.min.js"></script>
+    <script src="/XSBlog/Js/manage.globle.js"></script>
+    <script src="/XSBlog/Js/Validator.js"></script>
+    <script type="text/javascript">
+        //表单提交按钮事件
+        function ButtonSubmit() {
+            var theForm = document.forms['<% = Page.Form.ClientID %>'];
+                if (!theForm) {
+                    theForm = document.<% = Page.Form.ClientID %>;
+                }
+                return Validator.Validate(theForm, 2);
+            }
+    </script>
+    <asp:ContentPlaceHolder ID="TitlePlaceHolder" runat="server" />
+</head>
+<body>
+    <form id="aspnetForm" runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server" />
+    </form>
+</body>
+</html>

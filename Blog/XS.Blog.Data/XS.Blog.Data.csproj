@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0E0F63B-028C-48E2-A19A-A2657475C233}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XS.Blog.Data</RootNamespace>
+    <AssemblyName>XS.Blog.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataProvider\DataProvider.cs" />
+    <Compile Include="DataProvider\IDataProvider.cs" />
+    <Compile Include="IAlbum.cs" />
+    <Compile Include="IBlog.cs" />
+    <Compile Include="ICategory.cs" />
+    <Compile Include="IDaily.cs" />
+    <Compile Include="IMood.cs" />
+    <Compile Include="IPhoto.cs" />
+    <Compile Include="IUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\XS.Framework.Date\XS.Framework.Data.csproj">
+      <Project>{bd5e9f67-d8af-42e6-bcb5-8c826addf290}</Project>
+      <Name>XS.Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\XS.Framework.Utility\XS.Framework.Utility.csproj">
+      <Project>{f1e16d44-ab17-4c2a-a4bd-fdbb55c733fb}</Project>
+      <Name>XS.Framework.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog.Config\XS.Blog.Config.csproj">
+      <Project>{c5555929-e5be-49c4-93a9-e2ff10c7fbc9}</Project>
+      <Name>XS.Blog.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XS.Blog.Entity\XS.Blog.Entity.csproj">
+      <Project>{29872d95-9e7f-4ca0-80cc-0ce34708ed18}</Project>
+      <Name>XS.Blog.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
