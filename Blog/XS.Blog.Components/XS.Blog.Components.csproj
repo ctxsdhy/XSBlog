@@ -31,8 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AspNetPager">
-      <HintPath>X:\乌托邦\Net\Framework\XS.Framework\XS.Framework.Assemblys\AspNetPager\AspNetPager.dll</HintPath>
+    <Reference Include="AspNetPager, Version=7.4.5.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\net\Blog\trunks\XS.Blog2.0\XS.Blog.WebUI\bin\AspNetPager.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -74,6 +75,9 @@
       <Project>{fbe19402-28d0-4f4e-b9f0-3d524ccdd109}</Project>
       <Name>XS.Blog</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
